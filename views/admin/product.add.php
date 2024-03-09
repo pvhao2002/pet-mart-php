@@ -32,6 +32,7 @@ if (isset($_GET['status']) && $_GET['status'] === 'ok') {
                     <select class="form-control" id="exampleSelectGender" name="category" required>
                         <option value="1">Sản phẩm cho chó</option>
                         <option value="2">Sản phẩm cho mèo</option>
+                        <option value="3">Sản phẩm cho chó và mèo</option>
                     </select>
                 </div>
 

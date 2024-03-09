@@ -5,6 +5,7 @@ CREATE TABLE `users` (
     `user_id` INT AUTO_INCREMENT PRIMARY KEY,
     `email` VARCHAR(255) NOT NULL,
     `password` VARCHAR(255) NOT NULL,
+    `full_name` VARCHAR(255) NOT NULL,
     `role` ENUM('admin', 'user') NOT NULL DEFAULT 'user',
     `status` ENUM('active', 'inactive') NOT NULL DEFAULT 'inactive',
     `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -84,4 +85,11 @@ VALUES ('admin@gmail.com', '1234qwer', 'admin', 'active');
 -- INSERT DATA FOR TABLE `categories`
 INSERT INTO `categories` (`category_name`, `description`, `status`)
 VALUES ('Dog', 'Sản phẩm dành cho chó', 'active'),
-    ('Cat', 'Sản phẩm dành cho mèo', 'active');
+    ('Cat', 'Sản phẩm dành cho mèo', 'active'),
+    ('Other', 'Sản phẩm dành cho chó - mèo', 'active');
+CREATE TABLE `otp` (
+    `id` INT AUTO_INCREMENT PRIMARY KEY,
+    `email` VARCHAR(255) NOT NULL unique key,
+    `otp` VARCHAR(255) NOT NULL,
+    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

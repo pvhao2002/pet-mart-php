@@ -38,6 +38,8 @@ $currentProduct = ProductDAO::getInstance()->getById($_GET['id']);
                             cho chó</option>
                         <option value="2" <?php echo $currentProduct->getCategoryId() === 2 ? 'selected' : ''; ?>>Sản phẩm
                             cho mèo</option>
+                        <option value="3" <?php echo $currentProduct->getCategoryId() === 3 ? 'selected' : ''; ?>> Sản
+                            phẩm cho chó và mèo</option>
                     </select>
                 </div>
 

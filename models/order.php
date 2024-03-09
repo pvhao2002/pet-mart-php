@@ -1,4 +1,4 @@
-<?
+<?php
 class Order
 {
     private $orderId;
@@ -95,7 +95,6 @@ class Order
     public static function fromResultSet($resultSet)
     {
         $user = User::fromResultSet($resultSet);
-
         $order = new Order(
             $resultSet['order_id'],
             $resultSet['user_id'],
@@ -108,5 +107,4 @@ class Order
         );
         return $order;
     }
-
 }

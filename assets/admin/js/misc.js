@@ -36,7 +36,8 @@ var lightColor = getComputedStyle(document.body).getPropertyValue("--light");
 
     function addActiveClass(element) {
       // check if element is dashboard
-      if (!queryString) {
+      var elementUrl = element[0].href.split("/");
+      if (!queryString && elementUrl[elementUrl.length - 1] === "index.php") {
         element.parents(".nav-item").last().addClass("active");
         return;
       }

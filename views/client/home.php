@@ -1,3 +1,7 @@
+<?php
+$page = $_GET['page'] ?? 'OK';
+$classBody = $page !== 'product' ? 'template-index template-index-belle' : 'template-product';
+?>
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 
@@ -20,23 +24,43 @@
     <link rel="stylesheet" href="/assets/client/css/responsive.css">
 </head>
 
-<body class="template-index belle template-index-belle">
+<body class="<?php echo $classBody; ?> belle">
     <div class="pageWrapper">
-        <?php include 'search.form.php'; ?>
-        <?php include 'top-header.php'; ?>
-        <?php include 'header.php'; ?>
-        <?php include 'mobile.menu.php' ?>
+        <?php include './common/search.form.php'; ?>
+        <?php include './common/top-header.php'; ?>
+        <?php
+        switch ($page) {
+            case 'OK':
+            case 'shop':
+            case 'about-us':
+                include './common/header.php';
+                break;
+            case 'product':
+                include './common/header-2.php';
+                break;
+        }
+        ?>
+        <?php include './common/mobile.menu.php' ?>
         <div id="page-content">
             <?php
-            $page = $_GET['page'] ?? 'OK';
             if ($page === 'OK') {
-                require_once('home.slider.php');
+                require_once('./home/home.slider.php');
+                require_once('./home/collection-product.php');
+                require_once('./home/lastest-blog.php');
+                require_once('./home/feature.php');
+            } else if ($page === 'shop') {
+                require_once('shop.php');
+            } else if ($page === 'about-us') {
+                require_once('about-us.php');
+            } else if ($page === 'product') {
+                require_once('product-detail.php');
             }
             ?>
         </div>
 
     </div>
 
+    <?php include './common/footer.php'; ?>
 
     <script src="/assets/client/js/vendor/jquery-3.3.1.min.js"></script>
     <script src="/assets/client/js/vendor/modernizr-3.6.0.min.js"></script>
@@ -48,6 +72,8 @@
     <script src="/assets/client/js/popper.min.js"></script>
     <script src="/assets/client/js/lazysizes.js"></script>
     <script src="/assets/client/js/main.js"></script>
+    <script src="/assets/client/js/vendor/photoswipe.min.js"></script>
+    <script src="/assets/client/js/vendor/photoswipe-ui-default.min.js"></script>
 </body>
 
 </html>

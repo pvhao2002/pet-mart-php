@@ -126,7 +126,15 @@ class Product
 
     public function toUpdateSql()
     {
-
+        $sql = "update products set 
+        product_name = '{$this->getProductName()}',
+        price = '{$this->getProductPrice()}',
+        description = '{$this->getProductDescription()}',
+        stock = '{$this->getStock()}',
+        product_image = '{$this->getProductImage()}',
+        category_id = '{$this->getCategoryId()}' 
+        where product_id = '{$this->getProductId()}';";
+        return $sql;
     }
 
     public static function fromResultSet($arr)

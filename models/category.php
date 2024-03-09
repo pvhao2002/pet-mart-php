@@ -57,10 +57,10 @@ class Category
     public static function fromResultSet($resultSet)
     {
         $category = new Category(
-            $resultSet['category_id'],
-            $resultSet['category_name'],
-            $resultSet['description'],
-            $resultSet['status']
+            $resultSet['category_id'] ?? '',
+            $resultSet['category_name'] ?? '',
+            $resultSet['description'] ?? '',
+            $resultSet['status'] ?? ''
         );
         return $category;
     }
