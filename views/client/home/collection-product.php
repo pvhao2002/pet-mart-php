@@ -3,7 +3,7 @@ $listProductDog = ProductDAO::getInstance()->getTop10ProductByCategory(1);
 $listProductCat = ProductDAO::getInstance()->getTop10ProductByCategory(2);
 $listProductOther = ProductDAO::getInstance()->getTop10ProductByCategory(3);
 ?>
-
+<!-- Top 10 sản phẩm mới nhất -->
 <div class="tab-slider-product section">
     <div class="container">
         <div class="row">
