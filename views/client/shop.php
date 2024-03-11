@@ -37,7 +37,7 @@ $numberPage = ceil($list['total'] / $pageSize);
                     </div>
                 </div>
                 <div class="sidebar_widget static-banner">
-                    <img src="/assets/client/images/slideshow-banners/banner3.png" alt="Pet Mart" width="250"
+                    <img src="/assets/client/images/slideshow-banners/banner3.png" alt="Pông pet" width="250"
                         height="400" />
                 </div>
                 <div class="sidebar_widget">
@@ -151,6 +151,8 @@ $numberPage = ceil($list['total'] / $pageSize);
 
                                     <!-- Start product button -->
                                     <form class="variants add" action="index.php?page=cart&act=add" method="post">
+                                        <input type="hidden" name="pid" value="<?php echo $item->getProductId(); ?>">
+                                        <input type="hidden" name="price" value="<?php echo $item->getProductPrice(); ?>">
                                         <button class="btn btn-addto-cart" type="submit">Thêm vào giỏ hàng</button>
                                     </form>
                                     <!-- end product button -->

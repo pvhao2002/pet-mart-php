@@ -51,6 +51,10 @@ $listProductOther = ProductDAO::getInstance()->getTop10ProductByCategory(3);
 
                                             <!-- Start product button -->
                                             <form class="variants add" action="index.php?page=cart&act=add" method="post">
+                                                <input type="hidden" name="pid"
+                                                    value="<?php echo $item->getProductId(); ?>">
+                                                <input type="hidden" name="price"
+                                                    value="<?php echo $item->getProductPrice(); ?>">
                                                 <button class="btn btn-addto-cart" type="submit">Thêm vào giỏ hàng</button>
                                             </form>
                                             <div class="button-set">
@@ -137,6 +141,10 @@ $listProductOther = ProductDAO::getInstance()->getTop10ProductByCategory(3);
 
                                             <!-- Start product button -->
                                             <form class="variants add" action="index.php?page=cart&act=add" method="post">
+                                                <input type="hidden" name="pid"
+                                                    value="<?php echo $item->getProductId(); ?>">
+                                                <input type="hidden" name="price"
+                                                    value="<?php echo $item->getProductPrice(); ?>">
                                                 <button class="btn btn-addto-cart" type="submit">Thêm vào giỏ hàng</button>
                                             </form>
                                             <div class="button-set">
@@ -223,6 +231,10 @@ $listProductOther = ProductDAO::getInstance()->getTop10ProductByCategory(3);
 
                                             <!-- Start product button -->
                                             <form class="variants add" action="index.php?page=cart&act=add" method="post">
+                                                <input type="hidden" name="pid"
+                                                    value="<?php echo $item->getProductId(); ?>">
+                                                <input type="hidden" name="price"
+                                                    value="<?php echo $item->getProductPrice(); ?>">
                                                 <button class="btn btn-addto-cart" type="submit">Thêm vào giỏ hàng</button>
                                             </form>
                                             <div class="button-set">

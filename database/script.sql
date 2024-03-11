@@ -57,13 +57,14 @@ CREATE TABLE `orders` (
     `user_id` INT NOT NULL,
     `total_price` DECIMAL(10, 2) NOT NULL,
     `total_quantity` INT NOT NULL,
-    `payment_method` ENUM('COD', 'VN_PAY') NOT NULL,
+    `payment_method` ENUM('CASH', 'VN_PAY') NOT NULL,
     `status` ENUM(
         'pending',
         'processing',
         'completed',
         'cancelled'
     ) NOT NULL DEFAULT 'pending',
+    `qr_code` VARCHAR(2000) NULL,
     `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (`user_id`) REFERENCES `users`(`user_id`)
@@ -93,3 +94,5 @@ CREATE TABLE `otp` (
     `otp` VARCHAR(255) NOT NULL,
     `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+ALTER TABLE cart_items
+ADD UNIQUE INDEX idx_cart_product (cart_id, product_id);

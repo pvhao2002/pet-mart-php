@@ -896,6 +896,32 @@
         newVal = parseInt(oldValue) - 1;
       }
       $(qtyField).find(".qty").val(newVal);
+      var productId = $(this).attr("data-pid");
+      var param = {
+        quantity: newVal,
+        pid: productId,
+      };
+
+      // get param 'page' from url
+      var currentPage = window.location.href;
+      currentPage = currentPage.split("?");
+      currentPage = currentPage[1];
+      currentPage = currentPage.split("&");
+      currentPage = currentPage[0];
+      if (currentPage == "page=cart") {
+        $.ajax({
+          type: "POST",
+          url: "/views/client/index.php?page=cart&act=update",
+          data: param,
+          dataType: "json",
+          success: function (data) {
+            window.location.reload();
+          },
+          error: function (data) {
+            console.log(`error`, data);
+          },
+        });
+      }
     });
   }
   qnt_incre();

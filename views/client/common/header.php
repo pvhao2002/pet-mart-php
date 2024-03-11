@@ -1,7 +1,12 @@
 <?php
-
-
-
+$isLogin = $_SESSION['user'] ?? null;
+if ($isLogin) {
+    $user = $_SESSION['user'];
+    $userId = $_SESSION['user']['user_id'];
+    $cart = CartDAO::getInstance()->getCartByUser($userId);
+} else {
+    $cart = null;
+}
 ?>
 
 <div class="header-wrap classicHeader animated d-flex">
@@ -10,7 +15,7 @@
             <!--Desktop Logo-->
             <div class="logo col-md-2 col-lg-2 d-none d-lg-block">
                 <a href="index.php">
-                    <img src="/assets/client/images/logo.png" alt="Pet Mart" width="80" height="80" title="Pet Mart" />
+                    <img src="/assets/client/images/logo.png" alt="Pông pet" width="80" height="80" title="Pông pet" />
                 </a>
             </div>
             <!--End Desktop Logo-->
@@ -24,13 +29,17 @@
                 <!--Desktop Menu-->
                 <nav class="grid__item" id="AccessibleNav"><!-- for mobile -->
                     <ul id="siteNav" class="site-nav medium center hidearrow">
-                        <li class="lvl1 parent megamenu"><a style="color: #ffffff !important;" href="index.php">Trang chủ <i class="anm anm-angle-down-l "></i></a>
+                        <li class="lvl1 parent megamenu"><a style="color: #ffffff !important;" href="index.php">Trang
+                                chủ <i class="anm anm-angle-down-l "></i></a>
                         </li>
-                        <li class="lvl1 parent megamenu"><a style="color: #ffffff !important;" href="index.php?page=shop">Sản phẩm <i class="anm anm-angle-down-l"></i></a>
+                        <li class="lvl1 parent megamenu"><a style="color: #ffffff !important;"
+                                href="index.php?page=shop">Sản phẩm <i class="anm anm-angle-down-l"></i></a>
                         </li>
-                        <li class="lvl1 parent megamenu"><a style="color: #ffffff !important;" href="?page=about-us">Về chúng tôi <i class="anm anm-angle-down-l"></i></a>
+                        <li class="lvl1 parent megamenu"><a style="color: #ffffff !important;" href="?page=about-us">Về
+                                chúng tôi <i class="anm anm-angle-down-l"></i></a>
                         </li>
-                        <li class="lvl1"><a style="color: #ffffff !important;" href="#"><b>Mua ngay!</b> <i class="anm anm-angle-down-l"></i></a>
+                        <li class="lvl1"><a style="color: #ffffff !important;" href="#"><b>Mua ngay!</b> <i
+                                    class="anm anm-angle-down-l"></i></a>
                         </li>
                     </ul>
                 </nav>
@@ -40,7 +49,8 @@
             <div class="col-6 col-sm-6 col-md-6 col-lg-2 d-block d-lg-none mobile-logo">
                 <div class="logo">
                     <a href="index.php">
-                        <img src="/assets/client/images/logo.png" alt="Pet shop" style="width: 40px; height: 40px; object-fit: contain;" title="Pet shop" />
+                        <img src="/assets/client/images/logo.png" alt="Pet shop"
+                            style="width: 40px; height: 40px; object-fit: contain;" title="Pet shop" />
                     </a>
                 </div>
             </div>
@@ -49,78 +59,59 @@
                 <div class="site-cart">
                     <a href="#;" class="site-header__cart" title="Cart">
                         <i class="icon anm anm-bag-l"></i>
-                        <span id="CartCount" class="site-header__cart-count" data-cart-render="item_count">2</span>
+                        <span id="CartCount" class="site-header__cart-count" data-cart-render="item_count">
+                            <?php echo $cart ? count($cart->getListCartItems()) : 0; ?>
+                        </span>
                     </a>
                     <!--Minicart Popup-->
                     <div id="header-cart" class="block block-cart">
-                        <ul class="mini-products-list">
-                            <li class="item">
-                                <a class="product-image" href="#">
-                                    <img src="assets/images/product-images/cape-dress-1.jpg"
-                                        alt="3/4 Sleeve Kimono Dress" title="" />
-                                </a>
-                                <div class="product-details">
-                                    <a href="#" class="remove"><i class="anm anm-times-l" aria-hidden="true"></i></a>
-                                    <a href="#" class="edit-i remove"><i class="anm anm-edit"
-                                            aria-hidden="true"></i></a>
-                                    <a class="pName" href="cart.html">Sleeve Kimono Dress</a>
-                                    <div class="variant-cart">Black / XL</div>
-                                    <div class="wrapQtyBtn">
-                                        <div class="qtyField">
-                                            <span class="label">Qty:</span>
-                                            <a class="qtyBtn minus" href="javascript:void(0);"><i
-                                                    class="fa anm anm-minus-r" aria-hidden="true"></i></a>
-                                            <input type="text" id="Quantity" name="quantity" value="1"
-                                                class="product-form__input qty">
-                                            <a class="qtyBtn plus" href="javascript:void(0);"><i
-                                                    class="fa anm anm-plus-r" aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="priceRow">
-                                        <div class="product-price">
-                                            <span class="money">$59.00</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="item">
-                                <a class="product-image" href="#">
-                                    <img src="assets/images/product-images/cape-dress-2.jpg"
-                                        alt="Elastic Waist Dress - Black / Small" title="" />
-                                </a>
-                                <div class="product-details">
-                                    <a href="#" class="remove"><i class="anm anm-times-l" aria-hidden="true"></i></a>
-                                    <a href="#" class="edit-i remove"><i class="anm anm-edit"
-                                            aria-hidden="true"></i></a>
-                                    <a class="pName" href="cart.html">Elastic Waist Dress</a>
-                                    <div class="variant-cart">Gray / XXL</div>
-                                    <div class="wrapQtyBtn">
-                                        <div class="qtyField">
-                                            <span class="label">Qty:</span>
-                                            <a class="qtyBtn minus" href="javascript:void(0);"><i
-                                                    class="fa anm anm-minus-r" aria-hidden="true"></i></a>
-                                            <input type="text" id="Quantity" name="quantity" value="1"
-                                                class="product-form__input qty">
-                                            <a class="qtyBtn plus" href="javascript:void(0);"><i
-                                                    class="fa anm anm-plus-r" aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="priceRow">
-                                        <div class="product-price">
-                                            <span class="money">$99.00</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
+                        <?php
+                        if (!$cart || empty($cart->getListCartItems())) {
+                            echo '
+                                <ul class="mini-products-list">
+                                    <li class="item">No items in the cart.</li>
+                                </ul>
+                                ';
+                        } else {
+                            echo '<ul class="mini-products-list overflow-auto h-50">';
+                            foreach ($cart->getListCartItems() as $item) {
+                                echo '<li class="item cart-item">';
+                                echo '<a class="product-image" href="?page=product&id=' . $item->getProductId() . '">';
+                                echo '<img src="' . $item->getProduct()->getProductImage() . '" alt="' . $item->getProduct()->getProductName() . '" title="" />';
+                                echo '</a>';
+                                echo '<div class="product-details">';
+                                echo '<a href="?page=cart&act=remove&cid=' . $item->getCartItemId() . '" class="remove"><i class="anm anm-times-l" aria-hidden="true"></i></a>';
+                                echo '<a class="pName" href="?page=product&id=' . $item->getProductId() . '">' . $item->getProduct()->getProductName() . '</a>';
+                                echo '<div class="wrapQtyBtn">';
+                                echo '<div class="qtyField">';
+                                echo '<span class="label">Số lượng:</span>';
+                                // echo '<a class="qtyBtn minus" href="javascript:void(0);"><i class="fa anm anm-minus-r" aria-hidden="true"></i></a>';
+                                echo '<input type="text" id="Quantity" readonly  name="quantity" value="' . $item->getQuantity() . '" class="product-form__input qty">';
+                                // echo '<a class="qtyBtn plus" href="javascript:void(0);"><i class="fa anm anm-plus-r" aria-hidden="true"></i></a>';
+                                echo '</div>';
+                                echo '</div>';
+                                echo '<div class="priceRow">';
+                                echo '<div class="product-price">';
+                                echo '<span class="money">Đơn giá: ' . number_format($item->getProduct()->getProductPrice(), 0, '', ',') . ' đ</span>';
+                                echo '</div>';
+                                echo '<div class="product-price">';
+                                echo '<span class="money">Thành tiền: ' . number_format($item->getTotalPrice(), 0, '', ',') . ' đ</span>';
+                                echo '</div>';
+                                echo '</div>';
+                                echo '</div>';
+                                echo '</li>';
+                            }
+                            echo '</ul>';
+                        }
+                        ?>
                         <div class="total">
                             <div class="total-in">
-                                <span class="label">Cart Subtotal:</span><span class="product-price"><span
-                                        class="money">$748.00</span></span>
+                                <span class="label">Tổng tiền:</span><span class="product-price"><span class="money">
+                                        <?php echo (number_format($cart ? $cart->getTotalPrice() : 0, 0, '', ',') . ' đ'); ?>
+                                    </span></span>
                             </div>
                             <div class="buttonSet text-center">
-                                <a href="cart.html" class="btn btn-secondary btn--small">View Cart</a>
-                                <a href="checkout.html" class="btn btn-secondary btn--small">Checkout</a>
+                                <a href="?page=cart" class="btn btn-secondary btn--small">Xem</a>
                             </div>
                         </div>
                     </div>

@@ -57,5 +57,7 @@ class UserDAO
         $db = DB::getInstance();
         $stmt = $db->prepare($sql);
         $stmt->execute();
+        $lastId = $db->lastInsertId();
+        return $lastId;
     }
 }

@@ -4,8 +4,8 @@
             <!--Desktop Logo-->
             <div class="logo col-md-2 col-lg-2 d-none d-lg-block">
                 <a href="index.php">
-                    <img src="/assets/client/images/logo.png" style="width: 80px; height: 60px;" alt="PET MART"
-                        title="PET MART" />
+                    <img src="/assets/client/images/logo.png" style="width: 80px; height: 60px;" alt="Pông pet"
+                        title="Pông pet" />
                 </a>
             </div>
             <!--End Desktop Logo-->
@@ -34,8 +34,8 @@
             <div class="col-6 col-sm-6 col-md-6 col-lg-2 d-block d-lg-none mobile-logo">
                 <div class="logo">
                     <a href="index.html">
-                        <img src="/assets/client/images/logo.png" alt="PET MART"
-                            style="width: 40px; height: 40px; object-fit: contain;" title="PET MART" />
+                        <img src="/assets/client/images/logo.png" alt="Pông pet"
+                            style="width: 40px; height: 40px; object-fit: contain;" title="Pông pet" />
                     </a>
                 </div>
             </div>

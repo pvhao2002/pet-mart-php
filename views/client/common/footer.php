@@ -113,7 +113,7 @@
                     <!--Footer Copyright-->
                     <div
                         class="col-12 col-sm-12 col-md-6 col-lg-6 order-1 order-md-0 order-lg-0 order-sm-1 copyright text-sm-center text-md-left text-lg-left">
-                        <span></span> <a href="index.php">PET MART</a></div>
+                        <span></span> <a href="index.php">Pông pet</a></div>
                     <!--End Footer Copyright-->
                     <!--Footer Payment Icon-->
                     <div

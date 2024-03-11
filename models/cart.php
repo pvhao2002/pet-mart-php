@@ -6,14 +6,36 @@ class Cart
     private $user;
     private $totalPrice;
     private $totalQuantity;
+    private $listCartItems;
 
-    public function __construct($cartId, $userId, $user, $totalPrice, $totalQuantity)
+    public function __construct($cartId, $totalPrice, $totalQuantity, $userId, $user, $listCart = [])
     {
         $this->cartId = $cartId;
         $this->userId = $userId;
         $this->user = $user;
         $this->totalPrice = $totalPrice;
         $this->totalQuantity = $totalQuantity;
+        $this->listCartItems = $listCart;
+    }
+
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    public function setUser($user)
+    {
+        $this->user = $user;
+    }
+
+    public function getListCartItems()
+    {
+        return $this->listCartItems;
+    }
+
+    public function setListCartItems($listCartItems)
+    {
+        $this->listCartItems = $listCartItems;
     }
 
     public function getCartId()
@@ -58,15 +80,43 @@ class Cart
 
     public static function fromResultSet($resultSet)
     {
-        $user = User::fromResultSet($resultSet);
-
+        if (!$resultSet) {
+            return null;
+        }
         $cart = new Cart(
-            $resultSet['cart_id'],
-            $resultSet['user_id'],
-            $user,
-            $resultSet['total_price'],
-            $resultSet['total_quantity']
+            $resultSet[0]['cart_id'],
+            $resultSet[0]['cart_total'],
+            $resultSet[0]['cart_quantity'],
+            null,
+            null
         );
+        if ($cart->getTotalQuantity() == 0) {
+            return $cart;
+        }
+        // loop through the result set and create the list of cart items
+        $listTempCartItem = [];
+        foreach ($resultSet as $item) {
+            $product = new Product(
+                $item['product_id'],
+                $item['product_name'],
+                $item['product_price'],
+                null,
+                null,
+                $item['product_image'],
+                null,
+                null
+            );
+            $cartItem = new CartItem(
+                $item['cart_item_id'],
+                null,
+                $item['product_id'],
+                $item['item_quantity'],
+                $item['item_total'],
+                $product
+            );
+            $listTempCartItem[] = $cartItem;
+        }
+        $cart->setListCartItems($listTempCartItem);
         return $cart;
     }
 

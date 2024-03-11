@@ -1,6 +1,10 @@
 <?php
 $page = $_GET['page'] ?? 'OK';
-$classBody = $page !== 'product' ? 'template-index template-index-belle' : 'template-product';
+if ($page === 'cart') {
+    $classBody = 'page-template';
+} else {
+    $classBody = $page !== 'product' ? 'template-index template-index-belle' : 'template-product';
+}
 ?>
 <!DOCTYPE html>
 <html class="no-js" lang="en">
@@ -31,11 +35,15 @@ $classBody = $page !== 'product' ? 'template-index template-index-belle' : 'temp
         <?php
         switch ($page) {
             case 'OK':
+            case 'home':
             case 'shop':
             case 'about-us':
                 include './common/header.php';
                 break;
             case 'product':
+            case 'profile':
+            case 'thank-you':
+            case 'cart':
                 include './common/header-2.php';
                 break;
         }
@@ -43,7 +51,7 @@ $classBody = $page !== 'product' ? 'template-index template-index-belle' : 'temp
         <?php include './common/mobile.menu.php' ?>
         <div id="page-content">
             <?php
-            if ($page === 'OK') {
+            if ($page === 'OK' || $page === 'home') {
                 require_once('./home/home.slider.php');
                 require_once('./home/collection-product.php');
                 require_once('./home/lastest-blog.php');
@@ -54,6 +62,12 @@ $classBody = $page !== 'product' ? 'template-index template-index-belle' : 'temp
                 require_once('about-us.php');
             } else if ($page === 'product') {
                 require_once('product-detail.php');
+            } else if ($page === 'cart') {
+                require_once('cart.php');
+            } else if ($page === 'profile') {
+                require_once('profile.php');
+            } else if ($page === 'thank-you') {
+                require_once('thankyou.php');
             }
             ?>
         </div>

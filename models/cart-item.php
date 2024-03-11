@@ -6,14 +6,24 @@ class CartItem
     private $productId;
     private $quantity;
     private $totalPrice;
+    private $product;
 
-    public function __construct($cartItemId, $cartId, $productId, $quantity, $totalPrice)
+    public function __construct($cartItemId, $cartId, $productId, $quantity, $totalPrice, $product = null)
     {
         $this->cartItemId = $cartItemId;
         $this->cartId = $cartId;
         $this->productId = $productId;
         $this->quantity = $quantity;
         $this->totalPrice = $totalPrice;
+        $this->product = $product;
+    }
+    public function getProduct()
+    {
+        return $this->product;
+    }
+    public function setProduct($product)
+    {
+        $this->product = $product;
     }
 
     public function getCartItemId()

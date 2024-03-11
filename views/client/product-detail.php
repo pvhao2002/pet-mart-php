@@ -89,25 +89,28 @@ $product = ProductDAO::getInstance()->getById($id);
                     <div id="quantity_message">Chỉ còn <span class="items">
                             <?php echo $product->getStock(); ?>
                         </span> sản phẩm trong kho!</div>
-                    <form method="post" action="?page=cart" id="product_form_10508262282" accept-charset="UTF-8"
+                    <form method="post" action="?page=cart&act=add" id="product_form_10508262282" accept-charset="UTF-8"
                         class="product-form product-form-product-template hidedropdown" enctype="multipart/form-data">
                         <!-- Product Action -->
-                        <input type="hidden" name="pid" value="<?php echo $product->getProductId(); ?>">
+                        <input type="hidden" id="p-id" name="pid" value="<?php echo $product->getProductId(); ?>">
+                        <input type="hidden" name="price" value="<?php echo $product->getProductPrice(); ?>">
                         <div class="product-action clearfix">
                             <div class="product-form__item--quantity">
                                 <div class="wrapQtyBtn">
                                     <div class="qtyField">
-                                        <a class="qtyBtn minus" href="javascript:void(0);"><i class="fa anm anm-minus-r"
+                                        <a data-pid="<?php echo $product->getProductId(); ?>" class="qtyBtn minus"
+                                            href="javascript:void(0);"><i class="fa anm anm-minus-r"
                                                 aria-hidden="true"></i></a>
-                                        <input type="text" id="Quantity" name="quantity" value="1"
-                                            class="product-form__input qty">
-                                        <a class="qtyBtn plus" href="javascript:void(0);"><i class="fa anm anm-plus-r"
+                                        <input type="text" id="Quantity" name="quantity" value="1" min="1"
+                                            pattern="[0-9]*" class="product-form__input qty">
+                                        <a data-pid="<?php echo $product->getProductId(); ?>" class="qtyBtn plus"
+                                            href="javascript:void(0);"><i class="fa anm anm-plus-r"
                                                 aria-hidden="true"></i></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="product-form__item--submit">
-                                <button type="button" name="cart-add" class="btn product-form__cart-submit">
+                                <button type="submit" name="cart-add" class="btn product-form__cart-submit">
                                     <span>Thêm vào giỏ hàng</span>
                                 </button>
                             </div>
