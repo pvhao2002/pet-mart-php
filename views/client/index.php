@@ -8,8 +8,9 @@ require_once '../../autoload.php';
 $page = $_GET['page'] ?? '';
 switch ($page) {
     case 'test':
-        $orderId = 1;
-        QRCodeGenerate::getInstance()->generate($orderId);
+        phpinfo();
+        // $orderId = 1;
+        // QRCodeGenerate::getInstance()->generate($orderId);
         break;
     case 'thank-you':
         if (!isset($_SESSION['user']) || !$_SESSION['user']) {

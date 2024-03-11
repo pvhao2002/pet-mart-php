@@ -1,0 +1,70 @@
+2024-03-11 17:21:29: <br />
+<b>Warning</b>:  Trying to access array offset on int in <b>D:\workspace\pet-mart-php\vendor\phpqrcode\qrsplit.php</b> on line <b>71</b><br />
+<br />
+<b>Warning</b>:  Trying to access array offset on int in <b>D:\workspace\pet-mart-php\vendor\phpqrcode\qrsplit.php</b> on line <b>53</b><br />
+<br />
+<b>Deprecated</b>:  ord(): Passing null to parameter #1 ($character) of type string is deprecated in <b>D:\workspace\pet-mart-php\vendor\phpqrcode\qrsplit.php</b> on line <b>53</b><br />
+<br />
+<b>Warning</b>:  Trying to access array offset on int in <b>D:\workspace\pet-mart-php\vendor\phpqrcode\qrsplit.php</b> on line <b>62</b><br />
+<br />
+<b>Deprecated</b>:  ord(): Passing null to parameter #1 ($character) of type string is deprecated in <b>D:\workspace\pet-mart-php\vendor\phpqrcode\qrsplit.php</b> on line <b>62</b><br />
+2024-03-11 17:22:21: <br />
+<b>Warning</b>:  Trying to access array offset on int in <b>D:\workspace\pet-mart-php\vendor\phpqrcode\qrsplit.php</b> on line <b>71</b><br />
+<br />
+<b>Warning</b>:  Trying to access array offset on int in <b>D:\workspace\pet-mart-php\vendor\phpqrcode\qrsplit.php</b> on line <b>53</b><br />
+<br />
+<b>Deprecated</b>:  ord(): Passing null to parameter #1 ($character) of type string is deprecated in <b>D:\workspace\pet-mart-php\vendor\phpqrcode\qrsplit.php</b> on line <b>53</b><br />
+<br />
+<b>Warning</b>:  Trying to access array offset on int in <b>D:\workspace\pet-mart-php\vendor\phpqrcode\qrsplit.php</b> on line <b>62</b><br />
+<br />
+<b>Deprecated</b>:  ord(): Passing null to parameter #1 ($character) of type string is deprecated in <b>D:\workspace\pet-mart-php\vendor\phpqrcode\qrsplit.php</b> on line <b>62</b><br />
+2024-03-11 17:31:48: <br />
+<b>Warning</b>:  Trying to access array offset on int in <b>D:\workspace\pet-mart-php\vendor\phpqrcode\qrsplit.php</b> on line <b>71</b><br />
+<br />
+<b>Warning</b>:  Trying to access array offset on int in <b>D:\workspace\pet-mart-php\vendor\phpqrcode\qrsplit.php</b> on line <b>53</b><br />
+<br />
+<b>Deprecated</b>:  ord(): Passing null to parameter #1 ($character) of type string is deprecated in <b>D:\workspace\pet-mart-php\vendor\phpqrcode\qrsplit.php</b> on line <b>53</b><br />
+<br />
+<b>Warning</b>:  Trying to access array offset on int in <b>D:\workspace\pet-mart-php\vendor\phpqrcode\qrsplit.php</b> on line <b>62</b><br />
+<br />
+<b>Deprecated</b>:  ord(): Passing null to parameter #1 ($character) of type string is deprecated in <b>D:\workspace\pet-mart-php\vendor\phpqrcode\qrsplit.php</b> on line <b>62</b><br />
+2024-03-11 17:31:50: <br />
+<b>Warning</b>:  Trying to access array offset on int in <b>D:\workspace\pet-mart-php\vendor\phpqrcode\qrsplit.php</b> on line <b>71</b><br />
+<br />
+<b>Warning</b>:  Trying to access array offset on int in <b>D:\workspace\pet-mart-php\vendor\phpqrcode\qrsplit.php</b> on line <b>53</b><br />
+<br />
+<b>Deprecated</b>:  ord(): Passing null to parameter #1 ($character) of type string is deprecated in <b>D:\workspace\pet-mart-php\vendor\phpqrcode\qrsplit.php</b> on line <b>53</b><br />
+<br />
+<b>Warning</b>:  Trying to access array offset on int in <b>D:\workspace\pet-mart-php\vendor\phpqrcode\qrsplit.php</b> on line <b>62</b><br />
+<br />
+<b>Deprecated</b>:  ord(): Passing null to parameter #1 ($character) of type string is deprecated in <b>D:\workspace\pet-mart-php\vendor\phpqrcode\qrsplit.php</b> on line <b>62</b><br />
+2024-03-11 17:34:04: <br />
+<b>Warning</b>:  Trying to access array offset on int in <b>D:\workspace\pet-mart-php\vendor\phpqrcode\qrsplit.php</b> on line <b>71</b><br />
+<br />
+<b>Warning</b>:  Trying to access array offset on int in <b>D:\workspace\pet-mart-php\vendor\phpqrcode\qrsplit.php</b> on line <b>53</b><br />
+<br />
+<b>Deprecated</b>:  ord(): Passing null to parameter #1 ($character) of type string is deprecated in <b>D:\workspace\pet-mart-php\vendor\phpqrcode\qrsplit.php</b> on line <b>53</b><br />
+<br />
+<b>Warning</b>:  Trying to access array offset on int in <b>D:\workspace\pet-mart-php\vendor\phpqrcode\qrsplit.php</b> on line <b>62</b><br />
+<br />
+<b>Deprecated</b>:  ord(): Passing null to parameter #1 ($character) of type string is deprecated in <b>D:\workspace\pet-mart-php\vendor\phpqrcode\qrsplit.php</b> on line <b>62</b><br />
+2024-03-11 17:38:23: <br />
+<b>Warning</b>:  Trying to access array offset on int in <b>D:\workspace\pet-mart-php\vendor\phpqrcode\qrsplit.php</b> on line <b>71</b><br />
+<br />
+<b>Warning</b>:  Trying to access array offset on int in <b>D:\workspace\pet-mart-php\vendor\phpqrcode\qrsplit.php</b> on line <b>53</b><br />
+<br />
+<b>Deprecated</b>:  ord(): Passing null to parameter #1 ($character) of type string is deprecated in <b>D:\workspace\pet-mart-php\vendor\phpqrcode\qrsplit.php</b> on line <b>53</b><br />
+<br />
+<b>Warning</b>:  Trying to access array offset on int in <b>D:\workspace\pet-mart-php\vendor\phpqrcode\qrsplit.php</b> on line <b>62</b><br />
+<br />
+<b>Deprecated</b>:  ord(): Passing null to parameter #1 ($character) of type string is deprecated in <b>D:\workspace\pet-mart-php\vendor\phpqrcode\qrsplit.php</b> on line <b>62</b><br />
+2024-03-11 17:38:26: <br />
+<b>Warning</b>:  Trying to access array offset on int in <b>D:\workspace\pet-mart-php\vendor\phpqrcode\qrsplit.php</b> on line <b>71</b><br />
+<br />
+<b>Warning</b>:  Trying to access array offset on int in <b>D:\workspace\pet-mart-php\vendor\phpqrcode\qrsplit.php</b> on line <b>53</b><br />
+<br />
+<b>Deprecated</b>:  ord(): Passing null to parameter #1 ($character) of type string is deprecated in <b>D:\workspace\pet-mart-php\vendor\phpqrcode\qrsplit.php</b> on line <b>53</b><br />
+<br />
+<b>Warning</b>:  Trying to access array offset on int in <b>D:\workspace\pet-mart-php\vendor\phpqrcode\qrsplit.php</b> on line <b>62</b><br />
+<br />
+<b>Deprecated</b>:  ord(): Passing null to parameter #1 ($character) of type string is deprecated in <b>D:\workspace\pet-mart-php\vendor\phpqrcode\qrsplit.php</b> on line <b>62</b><br />
