@@ -7,7 +7,7 @@ CREATE TABLE `users` (
     `password` VARCHAR(255) NOT NULL,
     `full_name` VARCHAR(255) NOT NULL,
     `role` ENUM('admin', 'user') NOT NULL DEFAULT 'user',
-    `status` ENUM('active', 'inactive') NOT NULL DEFAULT 'inactive',
+    `status` ENUM('active', 'inactive', 'block') NOT NULL DEFAULT 'inactive',
     `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
@@ -82,19 +82,31 @@ CREATE TABLE `order_items` (
     FOREIGN KEY (`order_id`) REFERENCES `orders`(`order_id`),
     FOREIGN KEY (`product_id`) REFERENCES `products`(`product_id`)
 );
--- INSERT DATA FOR TABLE `users`
-INSERT INTO `users` (`email`, `password`, `role`, `status`)
-VALUES ('admin@gmail.com', '1234qwer', 'admin', 'active');
--- INSERT DATA FOR TABLE `categories`
-INSERT INTO `categories` (`category_name`, `description`, `status`)
-VALUES ('Dog', 'Sản phẩm dành cho chó', 'active'),
-    ('Cat', 'Sản phẩm dành cho mèo', 'active'),
-    ('Other', 'Sản phẩm dành cho chó - mèo', 'active');
 CREATE TABLE `otp` (
     `id` INT AUTO_INCREMENT PRIMARY KEY,
     `email` VARCHAR(255) NOT NULL unique key,
     `otp` VARCHAR(255) NOT NULL,
     `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+-- INSERT DATA FOR TABLE `users`
+INSERT INTO `users` (`email`, `password`, full_name, `role`, `status`)
+VALUES ('admin@gmail.com', '1234qwer', 'admin', 'admin', 'active');
+INSERT INTO `users` (`email`, `password`, `full_name`, `role`, `status`) VALUES
+('user1@example.com', '1234qwer', 'User 1', 'user', 'active'),
+('user2@example.com', '1234qwer', 'User 2', 'user', 'active'),
+('user3@example.com', '1234qwer', 'User 3', 'user', 'active'),
+('user4@example.com', '1234qwer', 'User 4', 'user', 'active'),
+('user5@example.com', '1234qwer', 'User 5', 'user', 'active'),
+('user6@example.com', '1234qwer', 'User 6', 'user', 'active'),
+('user7@example.com', '1234qwer', 'User 7', 'user', 'active'),
+('user8@example.com', '1234qwer', 'User 8', 'user', 'active'),
+('user9@example.com', '1234qwer', 'User 9', 'user', 'active');
+
+-- INSERT DATA FOR TABLE `categories`
+INSERT INTO `categories` (`category_name`, `description`, `status`)
+VALUES ('Dog', 'Sản phẩm dành cho chó', 'active'),
+    ('Cat', 'Sản phẩm dành cho mèo', 'active'),
+    ('Other', 'Sản phẩm dành cho chó - mèo', 'active');
 ALTER TABLE cart_items
 ADD UNIQUE INDEX idx_cart_product (cart_id, product_id);

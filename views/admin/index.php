@@ -3,6 +3,24 @@ session_start();
 require_once '../../autoload.php';
 if (isset($_GET['page'])) {
     switch ($_GET['page']) {
+        case 'user':
+            if (isset($_GET['act'])) {
+                if ($_GET['act'] == 'block') {
+                    $id = $_GET['id'];
+                    $sql = "UPDATE users SET status = 'block' WHERE user_id = $id";
+                    UserDAO::getInstance()->action($sql);
+                    header('Location: index.php?page=user');
+                    exit();
+                } else if ($_GET['act'] == 'unblock') {
+                    $id = $_GET['id'];
+                    $sql = "UPDATE users SET status = 'active' WHERE user_id = $id";
+                    UserDAO::getInstance()->action($sql);
+                    header('Location: index.php?page=user');
+                    exit();
+                }
+            }
+
+            break;
         case 'product':
             if (isset($_GET['act'])) {
                 switch ($_GET['act']) {

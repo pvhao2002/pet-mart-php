@@ -6,19 +6,16 @@ class User
     private $password;
     private $fullName;
     private $role;
+    private $status;
 
-    public function __construct($userId, $email, $password, $fullName, $role)
+    public function __construct($userId, $email, $password, $fullName, $role, $status)
     {
         $this->userId = $userId;
         $this->email = $email;
         $this->password = $password;
         $this->fullName = $fullName;
         $this->role = $role;
-    }
-
-    public function getUserId()
-    {
-        return $this->userId;
+        $this->status = $status;
     }
 
     public function getEmail()
@@ -40,15 +37,37 @@ class User
     {
         return $this->role;
     }
-
-    public function setUserId($userId)
+    public function getStatusValue()
     {
-        $this->userId = $userId;
+        return $this->status;
+    }
+
+    public function getStatus()
+    {
+        switch($this->status){
+            case 'active':
+                return 'Đã kích hoạt';
+            case 'block':
+                return 'Bị khóa';
+            default:
+                return 'Chưa kích hoạt';
+        }
     }
 
     public function setEmail($email)
     {
         $this->email = $email;
+    }
+
+    public function getUserId()
+    {
+        return $this->userId;
+    }
+
+
+    public function setUserId($userId)
+    {
+        $this->userId = $userId;
     }
 
     public function setPassword($password)
@@ -78,6 +97,13 @@ class User
     }
     public static function fromResultSet($arr)
     {
-        return new User($arr["user_id"], $arr["email"], $arr["password"], $arr["fullname"], $arr["role"]);
+        return new User(
+            $arr["user_id"],
+            $arr["email"],
+            $arr["password"],
+            $arr["fullname"],
+            $arr["role"],
+            $arr["status"]
+        );
     }
 }

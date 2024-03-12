@@ -20,4 +20,3 @@ require_once '../../models/status-upload.php';
 
 require_once '../../vendor/send-email.php';
 require_once '../../vendor/qr-code-generate.php';
-require_once '../../vendor/qr-code-generate-v2.php';

@@ -2,7 +2,6 @@
 if (isset($_GET['status']) && $_GET['status'] === 'ok') {
     echo "<script> alert('Sửa thông tin sản phẩm thành công'); </script>";
 }
-require_once('../../dao/product.dao.php');
 $currentProduct = ProductDAO::getInstance()->getById($_GET['id']);
 ?>
 

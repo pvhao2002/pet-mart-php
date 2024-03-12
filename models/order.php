@@ -82,6 +82,11 @@ class Order
         }
     }
 
+    public function getPaymentMethodValue()
+    {
+        return $this->paymentMethod;
+    }
+
     public function getStatus()
     {
         switch ($this->status) {
@@ -98,6 +103,16 @@ class Order
             default:
                 return 'Đang chờ xác nhận';
         }
+    }
+
+    public function getStatusValue()
+    {
+        return $this->status;
+    }
+
+    public function getUser()
+    {
+        return $this->user;
     }
 
     public function setOrderId($orderId)
@@ -135,6 +150,7 @@ class Order
         $this->status = $status;
     }
 
+    // lấy thông tin của order và order item
     public static function fromResultSet($resultSet)
     {
         $rs = count($resultSet) == 1 ? $resultSet : $resultSet[0];
@@ -160,12 +176,13 @@ class Order
         return $order;
     }
 
+    // chỉ lấy thông tin của order, không lấy thông tin của order item
     public static function fromResultSetV2($resultSet)
     {
         $order = new Order(
             $resultSet['order_id'],
-            $resultSet['user_id'],
             null,
+            new User(null, $resultSet['email'], null, $resultSet['full_name'], null, null),
             $resultSet['created_at'],
             $resultSet['total_price'],
             $resultSet['total_quantity'],

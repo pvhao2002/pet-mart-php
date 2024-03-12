@@ -1,5 +1,4 @@
 <?php
-require_once('../../dao/product.dao.php');
 $list = ProductDAO::getInstance()->getAll();
 ?>
 <style>

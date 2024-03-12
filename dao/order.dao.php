@@ -78,4 +78,28 @@ class OrderDAO
         $result = $req->fetchAll();
         return $result ? Order::fromResultSet($result) : null;
     }
+
+    public function getAll()
+    {
+        $sql = "
+                select o.order_id,
+                        u.email,
+                        u.full_name,
+                        o.total_price,
+                        o.total_quantity,
+                        o.payment_method,
+                        o.status,
+                        o.qr_code,
+                        o.created_at
+                from orders o
+                inner join users u on o.user_id = u.user_id;
+        ";
+        $db = DB::getInstance();
+        $req = $db->query($sql);
+        $list = [];
+        foreach ($req->fetchAll() as $item) {
+            $list[] = Order::fromResultSetV2($item);
+        }
+        return $list;
+    }
 }
