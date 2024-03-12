@@ -1,10 +1,9 @@
 Code hệ thống quản lí cửa hàng thú cưng có các chức năng:
 
-- đăng nhập, kí (xác tài khoản email)
+- đăng nhập, kí (xác tài khoản email), quên mật khẩu
 - giỏ hàng, mua hàng
-- thanh toán hoá đơn( quét mã QR vào momo thanh toán )
+- thanh toán hoá đơn( VN PAY hoặc thanh toán tiền mặt )
 - admin quản lý sản phẩm, người dùng, đơn hàng, thống kê
-  ( đưa sản phẩm vào nhiều tí chủ yếu là sản phẩm chó mèo và cho 1 thanh riêng về sản phẩm cho chó và sản phẩm cho mèo, giao diện thân thiện dễ thương )
 
 DEMO VNPAY:
 
@@ -22,3 +21,13 @@ Cách 2: Chạy bằng terminal: php -S localhost:443 (có thể thay 443 bằng
 Link thư viện:
 1: PHP Mailer - https://github.com/PHPMailer/PHPMailer
 2: QR-CODE - https://github.com/endroid/qr-code
+
+
+Chú ý: Để có thể sử dụng điện thoại quét mã QR-code  và xem được đơn hàng 
+Bước 1: Dùng laptop để bật hostpot phát wifi và sau đó điện thoại kết nối wifi
+Bước 2: Bấm window + r, nhập vào C:\Windows\System32\Drivers\etc
+Bước 3: Mở file host dưới quyền admin
+Bước 4: Kiểm tra địa chỉ ipv4 của máy bằng cách nhập trên terminal: ipconfig /all
+Bước 5: Cấu hình ở file host như sau:
+[ipv4] pongpet.test.com
+Thay ipv4 bằng địa chỉ ip của máy

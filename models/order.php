@@ -153,19 +153,18 @@ class Order
     // lấy thông tin của order và order item
     public static function fromResultSet($resultSet)
     {
-        $rs = count($resultSet) == 1 ? $resultSet : $resultSet[0];
         $order = new Order(
-            $rs['order_id'],
-            $rs['user_id'],
+            $resultSet[0]['order_id'],
+            $resultSet[0]['user_id'],
             null,
-            $rs['created_at'],
-            $rs['order_total'],
-            $rs['order_quantity'],
-            $rs['payment_method'],
-            $rs['status'],
-            $rs['qr_code']
+            $resultSet[0]['created_at'],
+            $resultSet[0]['order_total'],
+            $resultSet[0]['order_quantity'],
+            $resultSet[0]['payment_method'],
+            $resultSet[0]['status'],
+            $resultSet[0]['qr_code']
         );
-        
+       
         // loop through the result set and create the list of cart items
         $listOrderItemTemp = [];
         foreach ($resultSet as $item) {

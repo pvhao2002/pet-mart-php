@@ -25,13 +25,13 @@
                 $page = $page ?? '';
                 switch ($page) {
                     case 'user':
-                        include 'user.php';
+                        include 'user.list.php';
                         break;
                     case 'product':
                         include 'product.php';
                         break;
                     case 'order':
-                        include 'order.php';
+                        include 'order.list.php';
                         break;
                     default:
                         include 'dashboard.php';

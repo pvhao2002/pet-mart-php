@@ -101,7 +101,7 @@ class User
             $arr["user_id"],
             $arr["email"],
             $arr["password"],
-            $arr["fullname"],
+            $arr["full_name"],
             $arr["role"],
             $arr["status"]
         );

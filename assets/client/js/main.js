@@ -911,7 +911,7 @@
       if (currentPage == "page=cart") {
         $.ajax({
           type: "POST",
-          url: "/views/client/index.php?page=cart&act=update",
+          url: "/QLCH_ThuCung/views/client/index.php?page=cart&act=update",
           data: param,
           dataType: "json",
           success: function (data) {

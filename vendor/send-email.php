@@ -81,7 +81,7 @@ class SendEmail
                         <h2>Chi tiết đơn hàng</h2>
                         <p>Mã đơn hàng: PongPet - ' . htmlspecialchars($order->getOrderId()) . '</p>
                         <p>Ngày mua: ' . htmlspecialchars($order->getOrderDate()) . '</p>
-                        <p>Tổng tiền: ' . htmlspecialchars($order->getTotalPrice()) . '</p>
+                        <p>Tổng tiền: ' . htmlspecialchars(number_format($order->getTotalPrice(), 0, '', ',') . ' đ') . '</p>
                         <p>Phương thức thanh toán: ' . htmlspecialchars($order->getPaymentMethod()) . '</p>
                         <p>Trạng thái đơn hàng: ' . htmlspecialchars($order->getStatus()) . '</p>
 
@@ -89,18 +89,19 @@ class SendEmail
                         <table class="order-table">
                             <tr>
                                 <th>Sản phẩm</th>
+                                <th>Đơn giá</th>
                                 <th>Số lượng</th>
-                                <th>Giá</th>
+                                <th>Thành tiền</th>
                             </tr>';
 
         foreach ($order->getListOrderItems() as $item) {
             $html .= '<tr>
                         <td>' . htmlspecialchars($item->getProduct()->getProductName()) . '</td>
-                        <td>' . htmlspecialchars($item->getTotalQuantity()) . '</td>
-                        <td>' . htmlspecialchars($item->getTotalPrice()) . '</td>
+                        <td>' . htmlspecialchars(number_format($item->getProduct()->getProductPrice(), 0, '', ',') . ' đ') . '</td>
+                        <td>' . htmlspecialchars($item->getQuantity()) . '</td>
+                        <td>' . htmlspecialchars(number_format($item->getTotalPrice(), 0, '', ',') . ' đ') . '</td>
                     </tr>';
         }
-
         $html .= '</table>
                     </body>
                     </html>';

@@ -3,7 +3,6 @@ $list = OrderDAO::getInstance()->getAll();
 ?>
 <style>
     .truncate {
-        width: 250px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -15,16 +14,16 @@ $list = OrderDAO::getInstance()->getAll();
             <table class="table table-bordered ">
                 <thead>
                     <tr>
-                        <th scope="col"> Mã đơn hàng </th>
-                        <th> Email khách hàng </th>
-                        <th> Tên khách hàng </th>
-                        <th> Ngày mua </th>
-                        <th> Tổng tiền </th>
-                        <th> Tổng sản phẩm </th>
-                        <th> Phương thức thanh toán </th>
-                        <th> Trạng thái đơn hàng </th>
-                        <th> Mã QR code </th>
-                        <th> # </th>
+                        <th style="width: 7%;" scope="col"> Mã đơn hàng </th>
+                        <th style="width: 10%;"> Email khách hàng </th>
+                        <th style="width: 13%;"> Tên khách hàng </th>
+                        <th style="width: 10%;"> Ngày mua </th>
+                        <th style="width: 10%;"> Tổng tiền </th>
+                        <th style="width: 10%;"> Tổng sản phẩm </th>
+                        <th style="width: 10%;"> Phương thức thanh toán </th>
+                        <th style="width: 15%;"> Trạng thái đơn hàng </th>
+                        <th style="width: 15%;"> Mã QR code </th>
+                        <th style="width: 10%;"> # </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -39,10 +38,10 @@ $list = OrderDAO::getInstance()->getAll();
                         echo "<td>" . $item->getTotalQuantity() . "</td>";
                         echo "<td>" . $item->getPaymentMethod() . "</td>";
                         echo "<td>" . $item->getStatus() . "</td>";
-                        echo "<td><img src='" . $item->getQrCode() . "' alt='PET_MART' class='mt-2' style='width: 100px; height: 100px;' /></td>";
+                        echo "<td><img src='../client/" . $item->getQrCode() . "' alt='PET_MART' class='mt-2' style='width: 100px; height: 100px; border-radius: 0;' /></td>";
                         echo "<td>
-                                <a href='index.php?page=order&act=edit&id=" . $item->getProductId() . "' class='btn btn-warning'>Sửa</a>
-                                <a href='index.php?page=order&act=delete&id=" . $item->getProductId() . "' class='btn btn-outline-danger'>Xóa</a>
+                                <a href='index.php?page=order&act=edit&id=" . $item->getOrderId() . "' class='btn btn-warning btn-sm'>Sửa</a>
+                                <a href='index.php?page=order&act=delete&id=" . $item->getOrderId() . "' class='btn btn-outline-danger btn-sm'>Xóa</a>
                             </td>";
                         echo "</tr>";
                     }

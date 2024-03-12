@@ -6,10 +6,16 @@ require_once '../../autoload.php';
 $page = $_GET['page'] ?? '';
 switch ($page) {
     case 'test':
-        $orderId = 9;
-        $orderResult = OrderDAO::getInstance()->getOrderById($orderId);
-        var_dump($orderResult);
-        die();
+        $orderId = 1;
+        $order = OrderDAO::getInstance()->getOrderById($orderId);
+        $htmlOrder = SendEmail::getInstance()->getHtmlOrder($order);
+        print_r($htmlOrder);
+        break;
+    case 'order-detail':
+        if (isset($_GET['oid'])) {
+            $orderId = $_GET['oid'];
+            $order = OrderDAO::getInstance()->getOrderById($orderId);
+        }
         break;
     case 'thank-you':
         if (!isset($_SESSION['user']) || !$_SESSION['user']) {
@@ -23,6 +29,11 @@ switch ($page) {
                 $orderId = OrderDAO::getInstance()->createOrder($userId, 'VN_PAY');
                 $fileQrCode = QRCodeGenerate::getInstance()->generate($orderId);
                 OrderDAO::getInstance()->updateQrCode($orderId, $fileQrCode);
+                $orderResult = OrderDAO::getInstance()->getOrderById($orderId);
+                $htmlOrder = SendEmail::getInstance()->getHtmlOrder($orderResult);
+                $email = $_SESSION['user']['email'];
+                $subject = 'Pong Pet - Đơn hàng mới';
+                SendEmail::getInstance()->send($email, $_SESSION['user']['full_name'], $subject, $htmlOrder, $fileQrCode);
                 echo '<script>
                     alert("Đặt hàng thành công");
                     window.location.href = "index.php?page=thank-you";
@@ -208,12 +219,11 @@ switch ($page) {
                     $orderId = OrderDAO::getInstance()->createOrder($userId, 'CASH');
                     $fileQrCode = QRCodeGenerate::getInstance()->generate($orderId);
                     OrderDAO::getInstance()->updateQrCode($orderId, $fileQrCode);
-                    
                     $orderResult = OrderDAO::getInstance()->getOrderById($orderId);
                     $htmlOrder = SendEmail::getInstance()->getHtmlOrder($orderResult);
                     $email = $_SESSION['user']['email'];
                     $subject = 'Pong Pet - Đơn hàng mới';
-                    SendEmail::getInstance()->send($email, $_SESSION['user']['full_name'], $subject, $htmlOrde, $fileQrCode);
+                    SendEmail::getInstance()->send($email, $_SESSION['user']['full_name'], $subject, $htmlOrder, $fileQrCode);
                     echo '<script>
                         alert("Đặt hàng thành công");
                         window.location.href = "index.php?page=thank-you";

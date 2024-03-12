@@ -35,11 +35,24 @@ class OrderDAO
 
     public function getOrders($userId)
     {
-        $sql = "SELECT * FROM orders WHERE user_id = ?";
+        $sql = "
+                    select o.order_id,
+                    u.email,
+                    u.full_name,
+                    o.total_price,
+                    o.total_quantity,
+                    o.payment_method,
+                    o.status,
+                    o.qr_code,
+                    o.created_at
+            from orders o
+            inner join users u on o.user_id = u.user_id
+            where o.user_id = :user_id
+            order by o.created_at desc;
+        ";
         $db = DB::getInstance();
         $req = $db->prepare($sql); // Sử dụng prepare thay vì query
-        $req->execute([$userId]); // Truyền tham số vào câu lệnh SQL
-
+        $req->execute([':user_id' => $userId]);
         $list = [];
         foreach ($req->fetchAll() as $item) {
             $list[] = Order::fromResultSetV2($item);

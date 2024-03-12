@@ -44,6 +44,7 @@ if ($page === 'cart') {
             case 'profile':
             case 'thank-you':
             case 'cart':
+            case 'order-detail':
                 include './common/header-2.php';
                 break;
         }
@@ -68,6 +69,8 @@ if ($page === 'cart') {
                 require_once('profile.php');
             } else if ($page === 'thank-you') {
                 require_once('thankyou.php');
+            } else if($page === 'order-detail') {
+                require_once('order-detail.php');
             }
             ?>
         </div>
