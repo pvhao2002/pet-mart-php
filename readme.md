@@ -24,7 +24,9 @@ Cách 1: Copy project vào httpdocs ở xamapp, sau đó mở trên web với: h
 Cách 2: Chạy bằng terminal: php -S localhost:443 (có thể thay 443 bằng port bất kỳ)
 
 Link thư viện:
+
 1: PHP Mailer - https://github.com/PHPMailer/PHPMailer
+
 2: QR-CODE - https://github.com/endroid/qr-code
 
 
