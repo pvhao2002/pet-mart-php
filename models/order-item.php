@@ -85,8 +85,8 @@ class OrderItem
             $resultSet['order_item_id'],
             $resultSet['order_id'],
             $resultSet['product_id'],
-            $resultSet['quantity'],
-            $resultSet['total_price'],
+            $resultSet['item_quantity'],
+            $resultSet['item_total'],
             $product
         );
         return $orderItem;

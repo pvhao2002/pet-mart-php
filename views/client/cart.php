@@ -80,7 +80,7 @@ if ($isLogin) {
                     </tbody>
                     <tfoot>
                         <tr>
-                            <td colspan="3" class="text-left"><a href="?page=home" class="btn--link cart-continue"><i
+                            <td colspan="3" class="text-left"><a href="?page=shop" class="btn--link cart-continue"><i
                                         class="icon icon-arrow-circle-left"></i> Tiếp tục mua sắm</a></td>
                             <td colspan="3" class="text-right"><a href="?page=cart" name="update"
                                     class="btn--link cart-update"><i class="fa fa-refresh"></i> Làm mới</a></td>
@@ -122,7 +122,7 @@ if ($isLogin) {
                     <div class="cart__shipping">Vui lòng chọn phương thức thanh toán</div>
                     <input type="submit" name="checkout" id="cartCheckout" class="btn btn--small-wide checkout"
                         value="Checkout" <?php echo (!$cart || !$cart->getListCartItems()) ? 'disabled' : '' ?>>
-                    <div class="paymnet-img"><img src="/assets/client/images/payment-img.jpg" alt="Payment"></div>
+                    <div class="paymnet-img"><img src="../../assets/client/images/payment-img.jpg" alt="Payment"></div>
                 </div>
             </form>
         </div>

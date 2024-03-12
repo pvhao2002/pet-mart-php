@@ -15,7 +15,7 @@ if ($isLogin) {
             <!--Desktop Logo-->
             <div class="logo col-md-2 col-lg-2 d-none d-lg-block">
                 <a href="index.php">
-                    <img src="/assets/client/images/logo.png" alt="Pông pet" width="80" height="80" title="Pông pet" />
+                    <img src="../../assets/client/images/logo.png" alt="Pông pet" width="80" height="80" title="Pông pet" />
                 </a>
             </div>
             <!--End Desktop Logo-->
@@ -49,7 +49,7 @@ if ($isLogin) {
             <div class="col-6 col-sm-6 col-md-6 col-lg-2 d-block d-lg-none mobile-logo">
                 <div class="logo">
                     <a href="index.php">
-                        <img src="/assets/client/images/logo.png" alt="Pet shop"
+                        <img src="../../assets/client/images/logo.png" alt="Pet shop"
                             style="width: 40px; height: 40px; object-fit: contain;" title="Pet shop" />
                     </a>
                 </div>

@@ -1,7 +1,8 @@
 <?php
 $user = $_SESSION['user'];
+$list = OrderDAO::getInstance()->getOrders($user['user_id']);
 ?>
-<div class="container mt-3">
+<div class="container-fluid mt-3">
     <div class="main-body">
         <div class="row gutters-sm">
             <div class="col-md-4 mb-3">
@@ -54,31 +55,35 @@ $user = $_SESSION['user'];
                             <div class="card-body">
                                 <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">Lịch
                                         sử đơn hàng</i></h6>
-                                <small>Web Design</small>
-                                <div class="progress mb-3" style="height: 5px">
-                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 80%"
-                                        aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <small>Website Markup</small>
-                                <div class="progress mb-3" style="height: 5px">
-                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 72%"
-                                        aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <small>One Page</small>
-                                <div class="progress mb-3" style="height: 5px">
-                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 89%"
-                                        aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <small>Mobile Template</small>
-                                <div class="progress mb-3" style="height: 5px">
-                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 55%"
-                                        aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <small>Backend API</small>
-                                <div class="progress mb-3" style="height: 5px">
-                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 66%"
-                                        aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
+                                <table class="table table-bordered ">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col"> Mã đơn hàng </th>
+                                            <th> Ngày mua </th>
+                                            <th> Tổng tiền </th>
+                                            <th> Phương thức thanh toán </th>
+                                            <th> Trạng thái </th>
+                                            <th> Số lượng sản phẩm </th>
+                                            <th> Mã QR-Code </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                        foreach ($list as $item) {
+                                            echo "<tr>";
+                                            echo "<td scope='row'> PongPet - " . $item->getOrderId() . "</td>";
+                                            echo "<td>" . $item->getOrderDate() . "</td>";
+                                            echo "<td>" . (number_format($item->getTotalPrice(), 0, '', ',')) . " đ</td>";
+                                            echo "<td>" . $item->getPaymentMethod() . "</td>";
+                                            echo "<td>" . $item->getStatus() . "</td>";
+                                            echo "<td>" . $item->getTotalQuantity() . "</td>";
+                                            echo "<td>
+                                                    <img src='" . $item->getQrCode() . "' alt='PET_MART' class='mt-2' style='width: 100px; height: 100px;' />
+                                                </td>";
+                                        }
+                                        ?>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>

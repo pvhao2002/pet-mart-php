@@ -161,26 +161,26 @@ $product = ProductDAO::getInstance()->getById($id);
         <div class="prFeatures">
             <div class="row">
                 <div class="col-12 col-sm-6 col-md-6 col-lg-3 feature">
-                    <img src="/assets/client/images/credit-card.png" alt="Safe Payment" title="Safe Payment" />
+                    <img src="../../assets/client/images/credit-card.png" alt="Safe Payment" title="Safe Payment" />
                     <div class="details">
                         <h3>THANH TOÁN AN TOÀN</h3>Thanh toán bằng nhiều phương thức thanh toán.
                     </div>
                 </div>
                 <div class="col-12 col-sm-6 col-md-6 col-lg-3 feature">
-                    <img src="/assets/client/images/shield.png" alt="Confidence" title="Confidence" />
+                    <img src="../../assets/client/images/shield.png" alt="Confidence" title="Confidence" />
                     <div class="details">
                         <h3>SỰ TỰ TIN</h3>Bảo vệ bao gồm việc mua hàng và dữ liệu cá nhân của bạn.
                     </div>
                 </div>
                 <div class="col-12 col-sm-6 col-md-6 col-lg-3 feature">
-                    <img src="/assets/client/images/worldwide.png" alt="Worldwide Delivery"
+                    <img src="../../assets/client/images/worldwide.png" alt="Worldwide Delivery"
                         title="Worldwide Delivery" />
                     <div class="details">
                         <h3>LÀ NHÀ CUNG CẤP TRÊN TOÀN THẾ GIỚI</h3>Hơn 200 quốc gia và khu vực.
                     </div>
                 </div>
                 <div class="col-12 col-sm-6 col-md-6 col-lg-3 feature">
-                    <img src="/assets/client/images/phone-call.png" alt="Hotline" title="Hotline" />
+                    <img src="../../assets/client/images/phone-call.png" alt="Hotline" title="Hotline" />
                     <div class="details">
                         <h3>Hotline</h3>Liên hệ qua +1900 1000.
                     </div>

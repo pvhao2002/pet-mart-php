@@ -25,8 +25,8 @@
                 </ul>';
                 } else {
                     echo '<ul class="customer-links list-inline">
-                    <li><a href="index.php?page=login">Đăng nhập</a></li>
-                    <li><a href="index.php?page=register">Đăng ký tài khoản</a></li>
+                    <li><a href="?page=login">Đăng nhập</a></li>
+                    <li><a href="?page=register">Đăng ký tài khoản</a></li>
                 </ul>';
                 }
                 ?>

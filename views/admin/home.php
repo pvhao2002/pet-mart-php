@@ -5,10 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Pet - Mart</title>
-    <link rel="stylesheet" href="/assets/admin/vendors/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="/assets/admin/vendors/css/vendor.bundle.base.css">
-    <link rel="stylesheet" href="/assets/admin/css/style.css">
-    <link rel="shortcut icon" href="/assets/admin/images/favicon.ico" />
+    <link rel="stylesheet" href="../../assets/admin/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../../assets/admin/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="../../assets/admin/css/style.css">
+    <link rel="shortcut icon" href="../../assets/admin/images/favicon.ico" />
 </head>
 
 <body>
@@ -48,14 +48,14 @@
         <!-- page-body-wrapper ends -->
     </div>
 
-    <script src="/assets/admin/vendors/js/vendor.bundle.base.js"></script>
-    <script src="/assets/admin/vendors/chart.js/Chart.min.js"></script>
-    <script src="/assets/admin/js/jquery.cookie.js" type="text/javascript"></script>
-    <script src="/assets/admin/js/off-canvas.js"></script>
-    <script src="/assets/admin/js/hoverable-collapse.js"></script>
-    <script src="/assets/admin/js/misc.js"></script>
-    <script src="/assets/admin/js/dashboard.js"></script>
-    <script src="/assets/admin/js/file-upload.js"></script>
+    <script src="../../assets/admin/vendors/js/vendor.bundle.base.js"></script>
+    <script src="../../assets/admin/vendors/chart.js/Chart.min.js"></script>
+    <script src="../../assets/admin/js/jquery.cookie.js" type="text/javascript"></script>
+    <script src="../../assets/admin/js/off-canvas.js"></script>
+    <script src="../../assets/admin/js/hoverable-collapse.js"></script>
+    <script src="../../assets/admin/js/misc.js"></script>
+    <script src="../../assets/admin/js/dashboard.js"></script>
+    <script src="../../assets/admin/js/file-upload.js"></script>
 </body>
 
 </html>

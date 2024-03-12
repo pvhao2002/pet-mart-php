@@ -62,7 +62,9 @@ CREATE TABLE `orders` (
         'pending',
         'processing',
         'completed',
-        'cancelled'
+        'cancelled',
+        'refunded',
+        'done'
     ) NOT NULL DEFAULT 'pending',
     `qr_code` VARCHAR(2000) NULL,
     `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,

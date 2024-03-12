@@ -14,7 +14,7 @@ class SendEmail
         return self::$instance;
     }
 
-    public function send($email, $name, $subject, $body)
+    public function send($email, $name, $subject, $body, $attachment = null)
     {
         require 'Mail/src/Exception.php';
         require 'Mail/src/PHPMailer.php';
@@ -36,7 +36,8 @@ class SendEmail
             $mail->addAddress($email, $name);     //Add a recipient
 
             //Attachments
-            // $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
+            if ($attachment)
+                $mail->addAttachment($attachment);         //Add attachments
             // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
 
             //Content
@@ -52,5 +53,60 @@ class SendEmail
             return false;
         }
     }
+
+    public function getHtmlOrder($order)
+    {
+        $html = '<!DOCTYPE html>
+                    <html>
+                        <head>
+                            <meta charset="UTF-8">
+                            <style>
+                                .order-table {
+                                    width: 100%;
+                                    border-collapse: collapse;
+                                }
+                                .order-table, .order-table th, .order-table td {
+                                    border: 1px solid #ddd;
+                                    padding: 8px;
+                                }
+                                .order-table th {
+                                    padding-top: 12px;
+                                    padding-bottom: 12px;
+                                    text-align: left;
+                                    background-color: #f2f2f2;
+                                }
+                            </style>
+                        </head>
+                    <body>
+                        <h2>Chi tiết đơn hàng</h2>
+                        <p>Mã đơn hàng: PongPet - ' . htmlspecialchars($order->getOrderId()) . '</p>
+                        <p>Ngày mua: ' . htmlspecialchars($order->getOrderDate()) . '</p>
+                        <p>Tổng tiền: ' . htmlspecialchars($order->getTotalPrice()) . '</p>
+                        <p>Phương thức thanh toán: ' . htmlspecialchars($order->getPaymentMethod()) . '</p>
+                        <p>Trạng thái đơn hàng: ' . htmlspecialchars($order->getStatus()) . '</p>
+
+                        <h3>Danh sách sản phẩm:</h3>
+                        <table class="order-table">
+                            <tr>
+                                <th>Sản phẩm</th>
+                                <th>Số lượng</th>
+                                <th>Giá</th>
+                            </tr>';
+
+        foreach ($order->getListOrderItems() as $item) {
+            $html .= '<tr>
+                        <td>' . htmlspecialchars($item->getProduct()->getProductName()) . '</td>
+                        <td>' . htmlspecialchars($item->getTotalQuantity()) . '</td>
+                        <td>' . htmlspecialchars($item->getTotalPrice()) . '</td>
+                    </tr>';
+        }
+
+        $html .= '</table>
+                    </body>
+                    </html>';
+
+        return $html;
+    }
+
 
 }

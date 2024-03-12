@@ -1,15 +1,6 @@
 <?php
-// require_once('../../models/cart-item.php');
-// require_once('../../models/cart.php');
-// require_once('../../models/category.php');
-// require_once('../../models/order-item.php');
-// require_once('../../models/order.php');
-// require_once('../../models/user.php');
 session_start();
-require_once('../../models/product.php');
-require_once('../../models/status-upload.php');
-require_once('../../dao/file-upload.php');
-require_once('../../dao/product.dao.php');
+require_once '../../autoload.php';
 if (isset($_GET['page'])) {
     switch ($_GET['page']) {
         case 'product':
@@ -50,10 +41,10 @@ if (isset($_GET['page'])) {
                                     break;
                             }
                             if (isset($title) && $title === 'Lỗi') {
-                                echo "<script> alert('$body'); window.location.href='/views/admin/index.php?page=product&act=add';</script>";
+                                echo "<script> alert('$body'); window.location.href='index.php?page=product&act=add';</script>";
                             } else {
                                 ProductDAO::getInstance()->action($sql);
-                                header('Location: /views/admin/index.php?page=product&act=add&status=ok');
+                                header('Location: index.php?page=product&act=add&status=ok');
                                 exit();
                             }
                         }
@@ -103,10 +94,10 @@ if (isset($_GET['page'])) {
                                     break;
                             }
                             if (isset($title) && $title === 'Lỗi') {
-                                echo "<script> alert('$body'); window.location.href='/views/admin/index.php?page=product&act=edit&id=$id';</script>";
+                                echo "<script> alert('$body'); window.location.href='index.php?page=product&act=edit&id=$id';</script>";
                             } else {
                                 ProductDAO::getInstance()->action($sql);
-                                header('Location: /views/admin/index.php?page=product');
+                                header('Location: index.php?page=product');
                                 exit();
                             }
                         }
@@ -117,7 +108,7 @@ if (isset($_GET['page'])) {
 
         case 'logout':
             $_SESSION['user'] = null;
-            header('Location: /views/client/login.php');
+            header('Location: /QLCH_ThuCung/views/client/login.php');
             break;
     }
 }

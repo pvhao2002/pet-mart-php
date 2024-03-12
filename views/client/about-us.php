@@ -18,14 +18,14 @@
     </div>
     <div class="row">
         <div class="col-12 col-sm-4 col-md-4 col-lg-4 mb-4"><img class="blur-up lazyload"
-                data-src="/assets/client/images/slideshow-banners/banner.png"
-                src="/assets/client/images/slideshow-banners/banner.png" alt="About Us" /></div>
+                data-src="../../assets/client/images/slideshow-banners/banner.png"
+                src="../../assets/client/images/slideshow-banners/banner.png" alt="About Us" /></div>
         <div class="col-12 col-sm-4 col-md-4 col-lg-4 mb-4"><img class="blur-up lazyload"
-                data-src="/assets/client/images/slideshow-banners/banner1.jpg"
-                src="/assets/client/images/slideshow-banners/banner1.jpg" alt="About Us" /></div>
+                data-src="../../assets/client/images/slideshow-banners/banner1.jpg"
+                src="../../assets/client/images/slideshow-banners/banner1.jpg" alt="About Us" /></div>
         <div class="col-12 col-sm-4 col-md-4 col-lg-4 mb-4"><img class="blur-up lazyload"
-                data-src="/assets/client/images/slideshow-banners/banner3.png"
-                src="/assets/client/images/slideshow-banners/banner3.png" alt="About Us" /></div>
+                data-src="../../assets/client/images/slideshow-banners/banner3.png"
+                src="../../assets/client/images/slideshow-banners/banner3.png" alt="About Us" /></div>
     </div>
     <div class="row">
         <div class="col-12">

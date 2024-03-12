@@ -37,7 +37,7 @@ $numberPage = ceil($list['total'] / $pageSize);
                     </div>
                 </div>
                 <div class="sidebar_widget static-banner">
-                    <img src="/assets/client/images/slideshow-banners/banner3.png" alt="Pông pet" width="250"
+                    <img src="../../assets/client/images/slideshow-banners/banner3.png" alt="Pông pet" width="250"
                         height="400" />
                 </div>
                 <div class="sidebar_widget">

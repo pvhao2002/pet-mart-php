@@ -144,10 +144,10 @@ class Product
             $arr['product_id'],
             $arr['product_name'],
             $arr['price'],
-            $arr['description'],
-            $arr['stock'],
-            $arr['product_image'],
-            $arr['category_id'],
+            $arr['description'] ?? '',
+            $arr['stock'] ?? 0,
+            $arr['product_image'] ?? '',
+            $arr['category_id'] ?? 0,
             $category
         );
     }
