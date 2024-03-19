@@ -156,7 +156,7 @@ class Order
         $order = new Order(
             $resultSet[0]['order_id'],
             $resultSet[0]['user_id'],
-            null,
+            new User(null, $resultSet[0]['email'], null, $resultSet[0]['full_name'], null, null),
             $resultSet[0]['created_at'],
             $resultSet[0]['order_total'],
             $resultSet[0]['order_quantity'],

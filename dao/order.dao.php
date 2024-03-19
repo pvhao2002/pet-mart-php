@@ -66,6 +66,8 @@ class OrderDAO
                 select
                     o.order_id,
                     o.user_id,
+                    u.email,
+                    u.full_name,
                     o.created_at,
                     o.total_price as order_total,
                     o.total_quantity as order_quantity,
@@ -114,5 +116,12 @@ class OrderDAO
             $list[] = Order::fromResultSetV2($item);
         }
         return $list;
+    }
+
+    public function updateStatusOrder($sql)
+    {
+        $db = DB::getInstance();
+        $req = $db->prepare($sql);
+        $req->execute();
     }
 }

@@ -5,12 +5,6 @@ require_once '../../autoload.php';
 
 $page = $_GET['page'] ?? '';
 switch ($page) {
-    case 'test':
-        $orderId = 1;
-        $order = OrderDAO::getInstance()->getOrderById($orderId);
-        $htmlOrder = SendEmail::getInstance()->getHtmlOrder($order);
-        print_r($htmlOrder);
-        break;
     case 'order-detail':
         if (isset($_GET['oid'])) {
             $orderId = $_GET['oid'];
@@ -108,7 +102,6 @@ switch ($page) {
         }
         header('Location: register.php');
         break;
-
     case 'login':
         if (isset($_POST['login']) && $_POST['login']) {
             $email = $_POST['email'];
@@ -121,6 +114,10 @@ switch ($page) {
             }
             if ($user['password'] !== $password) {
                 $_SESSION['error'] = 'Mật khẩu không đúng';
+                header('Location: login.php');
+                die();
+            } else if($user['status'] === 'block') {
+                $_SESSION['error'] = 'Tài khoản của bạn đã bị khóa';
                 header('Location: login.php');
                 die();
             }

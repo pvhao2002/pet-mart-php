@@ -14,15 +14,15 @@ $list = OrderDAO::getInstance()->getAll();
             <table class="table table-bordered ">
                 <thead>
                     <tr>
-                        <th style="width: 7%;" scope="col"> Mã đơn hàng </th>
-                        <th style="width: 10%;"> Email khách hàng </th>
-                        <th style="width: 13%;"> Tên khách hàng </th>
+                        <th style="width: 7%;" scope="col"> Mã </th>
+                        <th style="width: 10%;"> Email KH </th>
+                        <th style="width: 13%;"> Tên KH </th>
                         <th style="width: 10%;"> Ngày mua </th>
                         <th style="width: 10%;"> Tổng tiền </th>
-                        <th style="width: 10%;"> Tổng sản phẩm </th>
-                        <th style="width: 10%;"> Phương thức thanh toán </th>
-                        <th style="width: 15%;"> Trạng thái đơn hàng </th>
-                        <th style="width: 15%;"> Mã QR code </th>
+                        <th style="width: 10%;"> Số lượng </th>
+                        <th style="width: 10%;"> Thanh toán </th>
+                        <th style="width: 15%;"> Trạng thái </th>
+                        <th style="width: 15%;"> QR code </th>
                         <th style="width: 10%;"> # </th>
                     </tr>
                 </thead>
@@ -40,8 +40,7 @@ $list = OrderDAO::getInstance()->getAll();
                         echo "<td>" . $item->getStatus() . "</td>";
                         echo "<td><img src='../client/" . $item->getQrCode() . "' alt='PET_MART' class='mt-2' style='width: 100px; height: 100px; border-radius: 0;' /></td>";
                         echo "<td>
-                                <a href='index.php?page=order&act=edit&id=" . $item->getOrderId() . "' class='btn btn-warning btn-sm'>Sửa</a>
-                                <a href='index.php?page=order&act=delete&id=" . $item->getOrderId() . "' class='btn btn-outline-danger btn-sm'>Xóa</a>
+                                <a href='index.php?page=order-detail&oid=" . $item->getOrderId() . "' class='btn btn-info btn-sm'>Chi tiết</a>
                             </td>";
                         echo "</tr>";
                     }

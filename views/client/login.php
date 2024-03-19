@@ -91,7 +91,6 @@ if (isset($_SESSION['user'])) {
                                     <div class="text-center col-12 col-sm-12 col-md-12 col-lg-12">
                                         <input type="submit" class="btn mb-3" name="login" value="Đăng nhập">
                                         <p class="mb-4">
-                                            <a href="#" id="RecoverPassword">Quên mật khẩu?</a> &nbsp; | &nbsp;
                                             <a href="register.php" id="customer_register_link">Tạo tài khoản</a>
                                         </p>
                                     </div>

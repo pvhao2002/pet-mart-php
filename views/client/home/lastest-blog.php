@@ -11,7 +11,7 @@
             <div class="col-12 col-sm-12 col-md-6 col-lg-6">
                 <div class="wrap-blog">
                     <a href="javascript:;" class="article__grid-image">
-                        <img src="/assets/client/images/lastes-1.jpg" alt="It's all about how you wear"
+                        <img src="../../assets/client/images/lastes-1.jpg" alt="It's all about how you wear"
                             title="It's all about how you wear" class="blur-up lazyloaded" width="300"
                             style="object-fit: contain;" height="300" />
                     </a>
@@ -36,7 +36,7 @@
             <div class="col-12 col-sm-12 col-md-6 col-lg-6">
                 <div class="wrap-blog">
                     <a href="javascript:;" class="article__grid-image">
-                        <img src="/assets/client/images/lastes-3.jpg" alt="27 Days of Spring Fashion Recap"
+                        <img src="../../assets/client/images/lastes-3.jpg" alt="27 Days of Spring Fashion Recap"
                             title="27 Days of Spring Fashion Recap" class="blur-up lazyloaded" width="300"
                             style="object-fit: contain;" height="300" />
                     </a>

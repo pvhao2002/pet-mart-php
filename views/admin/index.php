@@ -3,6 +3,28 @@ session_start();
 require_once '../../autoload.php';
 if (isset($_GET['page'])) {
     switch ($_GET['page']) {
+        case 'order':
+            if (isset($_GET['act'])) {
+                $oid = $_GET['oid'];
+                $status = "";
+                switch ($_GET['act']) {
+                    case 'confirm':
+                        $status = "processing";
+                        break;
+                    case 'cancel':
+                        $status = "cancelled";
+                        break;
+                    case 'refund':
+                        $status = "refunded";
+                        break;
+                    case 'completed':
+                        $status = "done";
+                        break;
+                }
+                $sql = "UPDATE orders SET status = '$status' WHERE order_id = $oid";
+                OrderDAO::getInstance()->updateStatusOrder($sql);
+            }
+            break;
         case 'user':
             if (isset($_GET['act'])) {
                 if ($_GET['act'] == 'block') {

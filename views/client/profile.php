@@ -65,6 +65,7 @@ $list = OrderDAO::getInstance()->getOrders($user['user_id']);
                                             <th> Trạng thái </th>
                                             <th> Số lượng sản phẩm </th>
                                             <th> Mã QR-Code </th>
+                                            <th> Chi tiết </th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -79,6 +80,9 @@ $list = OrderDAO::getInstance()->getOrders($user['user_id']);
                                             echo "<td>" . $item->getTotalQuantity() . "</td>";
                                             echo "<td>
                                                     <img src='" . $item->getQrCode() . "' alt='PET_MART' class='mt-2' style='width: 100px; height: 100px;' />
+                                                </td>";
+                                            echo "<td>
+                                                    <a href='index.php?page=order-detail&oid=" . $item->getOrderId() . "' class='btn btn-primary'>Xem chi tiết</a>
                                                 </td>";
                                         }
                                         ?>

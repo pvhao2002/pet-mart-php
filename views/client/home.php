@@ -30,7 +30,6 @@ if ($page === 'cart') {
 
 <body class="<?php echo $classBody; ?> belle">
     <div class="pageWrapper">
-        <?php include './common/search.form.php'; ?>
         <?php include './common/top-header.php'; ?>
         <?php
         switch ($page) {

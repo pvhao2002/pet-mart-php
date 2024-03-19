@@ -2,7 +2,7 @@
     <div class="home-slideshow">
         <div class="slide">
             <div class="blur-up lazyload bg-size">
-                <img class="blur-up lazyload bg-img" data-src="/assets/client/images/slideshow-banners/banner2.jpg"
+                <img class="blur-up lazyload bg-img" data-src="../../assets/client/images/slideshow-banners/banner2.jpg"
                     src="../../assets/client/images/slideshow-banners/banner2.jpg" alt="Pông pet" title="Pông pet" />
                 <div class="slideshow__text-wrap slideshow__overlay classic bottom">
                     <div class="slideshow__text-content bottom">
@@ -20,7 +20,7 @@
         </div>
         <div class="slide">
             <div class="blur-up lazyload bg-size">
-                <img class="blur-up lazyload bg-img" data-src="/assets/client/images/slideshow-banners/banner.png"
+                <img class="blur-up lazyload bg-img" data-src="../../assets/client/images/slideshow-banners/banner.png"
                     src="../../assets/client/images/slideshow-banners/banner.png" alt="Pông pet" title="Pông pet" />
                 <div class="slideshow__text-wrap slideshow__overlay classic bottom">
                     <div class="slideshow__text-content bottom">

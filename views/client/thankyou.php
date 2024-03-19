@@ -10,7 +10,7 @@
                 chúng tôi theo số hotline!</p>
             <center>
                 <div class="btn-group" style="margin-top:50px;">
-                    <a href="#" class="btn btn-lg btn-success" style="background: #5cb85c;">CONTINUE</a>
+                    <a href="index.php?page=shop" class="btn btn-lg btn-success" style="background: #5cb85c;">CONTINUE</a>
                 </div>
             </center>
         </div>

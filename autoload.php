@@ -7,6 +7,7 @@ require_once '../../dao/user.dao.php';
 require_once '../../dao/product.dao.php';
 require_once '../../dao/cart.dao.php';
 require_once '../../dao/order.dao.php';
+require_once '../../dao/dashboard.dao.php';
 require_once '../../dao/vnpay.config.php';
 
 require_once '../../models/cart-item.php';

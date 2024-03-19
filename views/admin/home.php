@@ -33,6 +33,9 @@
                     case 'order':
                         include 'order.list.php';
                         break;
+                    case 'order-detail':
+                        include 'order.detail.php';
+                        break;
                     default:
                         include 'dashboard.php';
                         break;
